@@ -72,7 +72,7 @@ type the following steps:
 * `$cd Sonar\ Local/`
 * `$git clone https://github.com/mtthwmths/SonarVBLocal`
 * `$cd SonarVBLocal'
-* '$vim SettingUpALocalSonarOnLinux.md'
+* `$vim SettingUpALocalSonarOnLinux.md`
 
 You're now staring at this document in your terminal's text editor 'Vim'.
 
