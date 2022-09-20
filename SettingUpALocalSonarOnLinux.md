@@ -121,6 +121,7 @@ For this section, I will be working in my Ubuntu VirtualBox machine. If you went
 1. install java-11
     * Ubuntu: `$sudo apt install java-11-openjdk-devel`
     * CentOS: `$sudo yum install java-11-openjdk-devel`
+    * Amazon Linux 2: `$sudo amazon-linux-extras install java-openjdk11`
 1. unzip the Sonarqube Community archive
 1. navigate to /bin/linux/
 1. run this
