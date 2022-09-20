@@ -16,7 +16,7 @@ Since we are heading towards using Sonarqube in linux, you'll want a linux envir
     * this will be the "catch-all" folder for this project.
 
 
-### Setting up a VirtualBox Ubuntu
+### Setting up an Ubuntu VirtualBox
 
 You can get virtual box from https://www.virtualbox.org/wiki/Downloads
 1. Under the "platform packages" section, you'll need the "Windows Hosts" or "OS X Hosts" depending on your operating system
@@ -47,13 +47,34 @@ You can get virtual box from https://www.virtualbox.org/wiki/Downloads
             * ![Ubuntu Virtual figure 10](Screenshots/VirtualBoxUbuntuLTS10.png)
 1. Now just go through the setup for Ubuntu and install the updates. You should default to "No" when it's asking about anonymous data or location or tracking or any of that stuff. :) (draw the rest of the owl jokes incoming)
 
+### Creating a CentOS Virtual box
+
+*VERY WORK-IN-PROGRESS*
+
+Loose notes below:
+1. You'll need CentOS Stream 9 downloaded from the [centos.org downloads page](https://www.centos.org/download/)
+1. Give it like 8GB ram and 4 cores or you'll be watching a slideshow
+1. Name it something like "CentOS Stream 9" and VirtualBox should set the template as RedHat linux.
+1. If you're on Windows 10/11, make sure in "Turn Windows features on or off" you have "Virtual Machine Platform" UNCHECKED.
+1. run this in terminal to make guest additions for linux work:
+    * `$sudo yum install gcc kernel-devel kernel-headers make bzip2 perl`
+
 ### getting Sonar on the Ubuntu machine 0_0
 
 Nike, Just do it! 
 
+Loosely based on the [2 minute guide Sonarqube.org has](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/).
+
 Just kidding, let's outline some steps. For this section, I will be working in my Ubuntu VirtualBox machine. If you went with a cooler solution, then these should still work but you'll need to adjust for other package management or hardware/software configurations.
 
-1. 
+1. download sonarqube community latest
+1. install java-11
+    * `$sudo apt install java-11-openjdk-devel`
+    * `$sudo yum install java-11-openjdk-devel`
+1. unzip the sonarqube community
+1. navigate to /bin/linux/
+1. run this
+    * `./sonar.sh console`
 
 ## random links and notes
 * [SecureCRT](https://www.vandyke.com/products/securecrt/index.html)
