@@ -47,6 +47,7 @@ You can get virtual box from https://www.virtualbox.org/wiki/Downloads
             * ![Ubuntu Virtual figure 10](Screenshots/VirtualBoxUbuntuLTS10.png)
 1. Now just go through the setup for Ubuntu and install the updates. You should default to "No" when it's asking about anonymous data or location or tracking or any of that stuff. :) (draw the rest of the owl jokes incoming)
 
+<<<<<<< HEAD
 ### Creating a CentOS Virtual box
 
 *VERY WORK-IN-PROGRESS*
@@ -58,11 +59,49 @@ Loose notes below:
 1. If you're on Windows 10/11, make sure in "Turn Windows features on or off" you have "Virtual Machine Platform" UNCHECKED.
 1. run this in terminal to make guest additions for linux work:
     * `$sudo yum install gcc kernel-devel kernel-headers make bzip2 perl`
+=======
+### getting linux ready for dev work
+
+Good news, we're on ubuntu and everything you need to know is already in a forum somewhere or documented by the Ubuntu team.
+Bad news, our Ubuntu from above needs some stuff to be ready for everything we'll need to do.
+Good news (abounds), getting stuff on linux is SUPER **EASY** because you just get it from the package manager.
+
+#### installing git (detailed)
+
+apt is a good way to get everything you need, including this document (hint hint).
+
+1. open a terminal in ubuntu (press the windows/super key and start typing terminal)
+1. congratulations, that's the most valuable trick in this whole section.
+1. type `sudo apt install git -y` 
+    * ![Ubuntu Git Install 1](Screenshots/VirtualBoxUbuntuGitInstall1.png)
+1. now type `git --version`
+    * ![Ubuntu Git Install 2](Screenshots/VirtualBoxUbuntuGitInstall2.png)
+
+Now let's get the repo containing this document with the git install we've just completed.
+
+type the following steps:
+* `$cd /home/<yourusername>/Documents`
+* `$mkdir 'Sonar Local'`
+* `$cd Sonar\ Local/`
+* `$git clone https://github.com/mtthwmths/SonarVBLocal`
+* `$cd SonarVBLocal`
+* `$vim SettingUpALocalSonarOnLinux.md`
+
+You're now staring at this document in your terminal's text editor 'Vim'.
+
+#### other tools
+
+I'm just gonna rattle off the stuff I'm using below here with any weird steps if they come up.
+You should be able to just type `$apt install <packagename>` to get everything on this list.
+
+* python3
+>>>>>>> 12cb6905aa00e3ecc0a176555c00f1caaa214a99
 
 ### getting Sonar on the Ubuntu machine 0_0
 
 Nike, Just do it! 
 
+<<<<<<< HEAD
 Loosely based on the [2 minute guide Sonarqube.org has](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/).
 
 Just kidding, let's outline some steps. For this section, I will be working in my Ubuntu VirtualBox machine. If you went with a cooler solution, then these should still work but you'll need to adjust for other package management or hardware/software configurations.
@@ -75,6 +114,9 @@ Just kidding, let's outline some steps. For this section, I will be working in m
 1. navigate to /bin/linux/
 1. run this
     * `./sonar.sh console`
+=======
+Just kidding, let's outline some steps. For this section, I will be working in my Ubuntu VirtualBox machine. If you went with a cooler solution, then these should still work but you'll need to adjust for other package management or hardware/software configurations. 
+>>>>>>> 12cb6905aa00e3ecc0a176555c00f1caaa214a99
 
 ## random links and notes
 * [SecureCRT](https://www.vandyke.com/products/securecrt/index.html)
