@@ -1,22 +1,34 @@
 # Put Sonar on Linux Locally
 
-## Tools & Getting a local environment for Sonarqube:
+## **Table of Contents**
+**[1. Tools & Local Environment](#1-tools--local-environment)**
 
-Assuming you have admin on the machine and it's a personal or something intended for development.
+* [1.1 Preparation Steps](#11-preparation-steps)
+* [1.2 Virtual Ubuntu](#12-virtual-ubuntu)
+* [1.3 Virtual CentOS](#13-virtual-centos)
+* [1.4 Getting Linux Setup for Development](#14-getting-linux-setup-for-development)
+    * [1.4.1 Installing Git](#141-installing-git)
+    * [1.4.2 Other Tools](#142-other-tools)
+
+**[2 Testing Sonar on your Linux](#2-testing-sonar-on-your-linux)**
+
+**[3 Random Links and Notes](#3-random-links-and-notes)**
+
+## **1. Tools & Local Environment**
+
+This guide will be assuming you have admin permissions and are working on a personal machine or something intended for development.
 
 You'll need some tools:
- 1. a text editor (notepad++, visual studio code, vim, sublime text, etc.)
+ 1. a text editor ( visual studio code, vim, notepad++, sublime text, etc.)
  2. a way to setup local servers (virtual box is free-99)
- 3. 
 
 Since we are heading towards using Sonarqube in linux, you'll want a linux environment. Virtualbox is a good way to get that stood up on Windows/Mac. There are other ways (WSL, cygwin, mingw, parallels, dual booting a personal machine) but Virtualbox should work on your machine and is easily changed-destroyed-rebuilt without taking much time. (Docker is good too, but that's for later)
 
-### preparation steps
+### **1.1 preparation steps**
 1. make a folder in your Documents (or wherever) called "Sonar Local"
     * this will be the "catch-all" folder for this project.
 
-
-### Setting up an Ubuntu VirtualBox
+### **1.2 Virtual Ubuntu**
 
 You can get virtual box from https://www.virtualbox.org/wiki/Downloads
 1. Under the "platform packages" section, you'll need the "Windows Hosts" or "OS X Hosts" depending on your operating system
@@ -47,7 +59,7 @@ You can get virtual box from https://www.virtualbox.org/wiki/Downloads
             * ![Ubuntu Virtual figure 10](Screenshots/VirtualBoxUbuntuLTS10.png)
 1. Now just go through the setup for Ubuntu and install the updates. You should default to "No" when it's asking about anonymous data or location or tracking or any of that stuff. :) (draw the rest of the owl jokes incoming)
 
-### Creating a CentOS Virtual box
+### **1.3 Virtual Centos**
 
 *VERY WORK-IN-PROGRESS*
 
@@ -59,26 +71,26 @@ Loose notes below:
 1. run this in terminal to make guest additions for linux work:
     * `$sudo yum install gcc kernel-devel kernel-headers make bzip2 perl`
 
-### getting linux ready for dev work
+### **1.4 Getting Linux setup for development**
 
 Good news, we're on ubuntu and everything you need to know is already in a forum somewhere or documented by the Ubuntu team.
 Bad news, our Ubuntu from above needs some stuff to be ready for everything we'll need to do.
-Good news (abounds), getting stuff on linux is SUPER **EASY** because you just get it from the package manager.
+Good news (abounds), getting stuff on linux is **SUPER *EASY*** because you just get it from the package manager.
 
-#### installing git (detailed)
+#### **1.4.1 Installing Git**
 
-apt is a good way to get everything you need, including this document (hint hint).
+apt/yum is a good way to get everything you need, including this document (hint hint).
 
-1. open a terminal in ubuntu (press the windows/super key and start typing terminal)
-1. congratulations, that's the most valuable trick in this whole section.
-1. type `sudo apt install git -y` 
+1. Open a terminal in ubuntu (press the windows/super key and start typing terminal)
+1. Congratulations, that's the most valuable trick in this whole section.
+1. Type `sudo apt install git -y`.
     * ![Ubuntu Git Install 1](Screenshots/VirtualBoxUbuntuGitInstall1.png)
-1. now type `git --version`
+1. Now, type `git --version`.
     * ![Ubuntu Git Install 2](Screenshots/VirtualBoxUbuntuGitInstall2.png)
 
 Now let's get the repo containing this document with the git install we've just completed.
 
-type the following steps:
+Type the following steps:
 * `$cd /home/<yourusername>/Documents`
 * `$mkdir 'Sonar Local'`
 * `$cd Sonar\ Local/`
@@ -88,10 +100,10 @@ type the following steps:
 
 You're now staring at this document in your terminal's text editor 'Vim'.
 
-#### other tools
+#### **1.4.2 Other Tools**
 
 I'm just gonna rattle off the stuff I'm using below here with any weird steps if they come up.
-You should be able to just type `$apt install <packagename>` to get everything on this list.
+You should be able to just type `$sudo apt install <packagename>` or `$sudo yum install <packagename>` to get everything on this list.
 
 * python3
 * sed
@@ -99,7 +111,7 @@ You should be able to just type `$apt install <packagename>` to get everything o
 * perl
 * java-11-openjdk-devel
 
-### Testing Sonar on your Linux
+## **2 Testing Sonar on your Linux**
 
 Loosely based on the [2 minute guide Sonarqube.org has](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/).
 
@@ -116,10 +128,11 @@ For this section, I will be working in my Ubuntu VirtualBox machine. If you went
 1. once the text in your terminal stops, open a browser and navigate to `http://localhost:9000`
     * user:pass should be admin:admin
 
-## random links and notes
+## **3 Random Links and Notes**
 * [SecureCRT](https://www.vandyke.com/products/securecrt/index.html)
 * [putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [VS Code markdown doc](https://code.visualstudio.com/Docs/languages/markdown)
 * [sqlserver2pgsql](https://github.com/dalibo/sqlserver2pgsql)
 * [migrating sqlserver to postgres article](https://www.endpointdev.com/blog/2019/01/migrate-from-sql-server-to-postgresql/)
+* [2 minute guide Sonarqube.org](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/)
