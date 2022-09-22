@@ -135,5 +135,6 @@ For this section, I will be working in my Ubuntu VirtualBox machine. If you went
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * [VS Code markdown doc](https://code.visualstudio.com/Docs/languages/markdown)
 * [sqlserver2pgsql](https://github.com/dalibo/sqlserver2pgsql)
+* [endpointdev article where I found sqlserver2pgsql](https://www.endpointdev.com/blog/2019/01/migrate-from-sql-server-to-postgresql/)
 * [migrating sqlserver to postgres article](https://www.endpointdev.com/blog/2019/01/migrate-from-sql-server-to-postgresql/)
 * [2 minute guide Sonarqube.org](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/)
