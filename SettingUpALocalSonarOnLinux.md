@@ -129,6 +129,13 @@ For this section, I will be working in my Ubuntu VirtualBox machine. If you went
 1. once the text in your terminal stops, open a browser and navigate to `http://localhost:9000`
     * user:pass should be admin:admin
 
+postgres local install
+notes on psql config
+ - don't use my_schema
+ -   sudo yum :
+     - install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm 
+     - install postgresql14-server
+
 ## **3 Random Links and Notes**
 * [SecureCRT](https://www.vandyke.com/products/securecrt/index.html)
 * [putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
@@ -138,3 +145,8 @@ For this section, I will be working in my Ubuntu VirtualBox machine. If you went
 * [endpointdev article where I found sqlserver2pgsql](https://www.endpointdev.com/blog/2019/01/migrate-from-sql-server-to-postgresql/)
 * [migrating sqlserver to postgres article](https://www.endpointdev.com/blog/2019/01/migrate-from-sql-server-to-postgresql/)
 * [2 minute guide Sonarqube.org](https://docs.sonarqube.org/latest/setup/get-started-2-minutes/)
+* [sonar elastisearch vm-max-map-count](https://www.elastic.co/guide/en/elasticsearch/reference/5.5/vm-max-map-count.html)
+* [devopscube: sonar on linux](https://devopscube.com/setup-and-configure-sonarqube-on-linux/)
+* [learnin about plsql schemas](https://dba.stackexchange.com/questions/106057/error-no-schema-has-been-selected-to-create-in)
+* [plsql permissions doc](https://www.postgresql.org/docs/current/ddl-priv.html)
+* [plsql peer auth failed](https://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge)
