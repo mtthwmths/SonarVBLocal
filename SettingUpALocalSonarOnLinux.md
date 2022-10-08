@@ -163,3 +163,4 @@ LVM expansion
 * [plsql peer auth failed](https://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge)
 * [notes on lvm extension - tecmint](https://www.tecmint.com/extend-and-reduce-lvms-in-linux/)
 * [stackoverflow about xfs_growfs](https://stackoverflow.com/questions/26305376/resize2fs-bad-magic-number-in-super-block-while-trying-to-open)
+* [renamed a vg and can't boot](https://forums.centos.org/viewtopic.php?t=73033)
