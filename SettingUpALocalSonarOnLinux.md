@@ -161,3 +161,5 @@ LVM expansion
 * [learnin about plsql schemas](https://dba.stackexchange.com/questions/106057/error-no-schema-has-been-selected-to-create-in)
 * [plsql permissions doc](https://www.postgresql.org/docs/current/ddl-priv.html)
 * [plsql peer auth failed](https://stackoverflow.com/questions/18664074/getting-error-peer-authentication-failed-for-user-postgres-when-trying-to-ge)
+* [notes on lvm extension - tecmint](https://www.tecmint.com/extend-and-reduce-lvms-in-linux/)
+* [stackoverflow about xfs_growfs](https://stackoverflow.com/questions/26305376/resize2fs-bad-magic-number-in-super-block-while-trying-to-open)
