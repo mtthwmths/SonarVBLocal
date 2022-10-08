@@ -136,6 +136,17 @@ notes on psql config
      - install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm 
      - install postgresql14-server
 
+LVM expansion
+ - first use parted
+     - unit B print free
+     - resizepart 2 \[whatever the end of the free space at the end is]
+     - quit
+ - Now use lvm
+     - pvresize <pv-name>
+     - lvresize /dev/<vol-group>/<lv-name> <pv-name>
+     - quit
+ - Finally use xfs_growfs /dev/<vol-group>/<lv-name> or resize2fs /dev/<vol-group>/<lv-name>
+
 ## **3 Random Links and Notes**
 * [SecureCRT](https://www.vandyke.com/products/securecrt/index.html)
 * [putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
