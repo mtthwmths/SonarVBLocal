@@ -12,7 +12,9 @@
 
 **[2 Testing Sonar on your Linux](#2-testing-sonar-on-your-linux)**
 
-**[3 Random Links and Notes](#3-random-links-and-notes)**
+**[3 Sonar Notes on AWS](#3-sonar-notes-on-aws)**
+
+**[4 Random Links and Notes](#4-random-links-and-notes)**
 
 ## **1. Tools & Local Environment**
 
@@ -122,6 +124,7 @@ For this section, I will be working in my Ubuntu VirtualBox machine. If you went
     * Ubuntu: `$sudo apt install java-11-openjdk-devel`
     * CentOS: `$sudo yum install java-11-openjdk-devel`
     * Amazon Linux 2: `$sudo amazon-linux-extras install java-openjdk11`
+        * you can run `$sudo amazon-linux-extras` to check what is enabled from the amazon-linux-extras repository
 1. unzip the Sonarqube Community archive
 1. navigate to /bin/linux/
 1. run this
@@ -147,7 +150,50 @@ LVM expansion
      - quit
  - Finally use xfs_growfs /dev/<vol-group>/<lv-name> or resize2fs /dev/<vol-group>/<lv-name>
 
-## **3 Random Links and Notes**
+## **3 Sonar Notes on AWS**
+adduser sonar
+groupadd sonar
+usermod -a -G sonar sonar
+check that with $groups sonar
+
+check java version with `$sudo yum list installed | grep java` and it should return the packages that are being tracked and updated by `$sudo yum update -y`
+
+added line to /etc/fstab/ to persist the mounting of software drive in opt
+    - `UUID=18ed6f7b-c83f-4d22-8f52-a3d8f7266eb9 /opt/Software/ xfs defaults,noatime 1 1`
+    - UUID is from lsblk -fs /dev/sdb/
+
+systemd/system/sonarqube.service file
+ - set user and group and sonar
+ - set java as /bin/java
+ - set directory as /opt/Software/sonarqube
+     - this implies that when upgrading/updating sonar we will make sure to unzip into /opt/Software/sonarqube
+     - Because the sonar-application jar name ends with the version of SonarQube, you will need to adjust the ExecStart command accordingly on install and at each upgrade.
+ - All SonarQube directories should be owned by the sonarqube user. (no really check them all)
+     - `#chown -R sonar:sonar /opt/Software/sonarqube`
+
+elasticsearch is hongry. run this to expand vm.max_blah
+ - `sudo su && cd /etc/ && vim sysctl.conf` 
+     - then add in the line below
+     - vm.max_map_count=524288
+then reload the sysctl configs using this
+ - `sysctl --system`
+then check that the changes took by using
+ - `sysctl vm.max_map_count`
+
+ quicknotes 11182022 (connecting to mssql db from 201)
+ - copied config file from 205 sonar test to connect sonar linux to test db.
+ - test db is currently an copy of prod sonar db from WE 11112022
+
+ quicknotes 12082022 (connecting to rds and updating sonar from 9.6 -> 9.7)
+ - had to wget the file from sonarqube binaries: `wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.7.1.62043.zip`
+ - unzip, update sonarqube.service to point to the new folder, reboot or run the systemd update command.
+     - it should prompt you with the command needed when you update the service file.
+ - connecting to RDS
+     - query: `ALTER DATABASE sonarcomm COLLATE SQL_Latin1_General_CP1_CS_AS`
+     - connecting was endpoint,port and not endpoint:port
+ - 
+
+## **4 Random Links and Notes**
 * [SecureCRT](https://www.vandyke.com/products/securecrt/index.html)
 * [putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
