@@ -191,7 +191,21 @@ then check that the changes took by using
  - connecting to RDS
      - query: `ALTER DATABASE sonarcomm COLLATE SQL_Latin1_General_CP1_CS_AS`
      - connecting was endpoint,port and not endpoint:port
- - 
+ - to reindex elasticsearch for sonar:
+     - stop sonar
+     - remove data/es<#>
+     - start sonar
+     - monitor the es.log file for any indexing that is happening..image.pngimage.png
+ quicknotes 12132022 (ec2 creation notes)
+ - go to ec2>volumes
+ - create volume for software
+ - actions>attach volume
+ - go to ec2>instances
+ - check the storage tab and you should see the volume in the block devices section
+ - ssh to the server (putty, securecrt, etc.)
+ - added line to /etc/fstab/ to persist the mounting of software drive in opt
+    - `UUID=18ed6f7b-c83f-4d22-8f52-a3d8f7266eb9 /opt/Software/ xfs defaults,noatime 1 1`
+    - UUID is from `$lsblk -fs /dev/sdb/`
 
 ## **4 Random Links and Notes**
 * [SecureCRT](https://www.vandyke.com/products/securecrt/index.html)
