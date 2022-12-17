@@ -207,6 +207,9 @@ then check that the changes took by using
     - `UUID=18ed6f7b-c83f-4d22-8f52-a3d8f7266eb9 /opt/Software/ xfs defaults,noatime 1 1`
     - UUID is from `$lsblk -fs /dev/sdb/`
 
+ quicknotes 12172022
+ - if your local admin password is forgotten/lost, you can reset it to admin by following the instructions [here](https://docs.sonarqube.org/latest/instance-administration/security/#reinstating-admin-access)
+
 ## **4 Random Links and Notes**
 * [SecureCRT](https://www.vandyke.com/products/securecrt/index.html)
 * [putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
